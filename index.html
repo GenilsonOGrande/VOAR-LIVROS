@@ -61,8 +61,32 @@
   font-family: inherit;
   margin: 0;
 }
+ .login{
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  float:right;
+              }
+   .home{
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  float:left;
+}
 
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus, .login:hover, .home:hover{
   background-color: grey;
 }
 
@@ -95,12 +119,13 @@
 .show {
   display: block;
 }
+   
 
 
 
              </style>
             <div class="navbar">
-                <a href="index.html">Home</a>
+                <button class="home" href="index.html">Home</button>
 
 
                 <div class="dropdown">
@@ -153,7 +178,7 @@
                     </div>
 
                 </div>
-
+              <button class="login" href="index.html">LOGIN</button>
             </div>
 <!--
 
