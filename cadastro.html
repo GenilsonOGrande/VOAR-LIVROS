@@ -16,7 +16,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            align-content: center;
             justify-content: center;
             width: 100%;
             height: auto;
@@ -72,7 +71,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            border: 2px solid darkgray;
             color: #000;
             text-shadow: 1px 1px 0 #fff;
         }
@@ -113,18 +111,43 @@
             transform: scale(1.05);
             background-color: #0045806;
         }
+
+        .o-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+
+        .o-header img {
+            margin-right: 10px;
+        }
+
+        .o-header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .o-header h5 {
+            margin: 0;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .o-footer {
+            text-align: center;
+            padding: 10px;
+        }
     </style>
 </head>
-<body style="background-image: url('Img/VoarHangaresBG.jpg'); background-size: cover;">
-    <header class="o-header"> <!-- aqui inicia o HEADER -->
-        <div style="display: flex; align-items: center;">
-            <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px">
-            <div style="text-align: center; margin: 0 auto;">
-                <h1>VOAR DIGITAL DOCS</h1>
-                <h5>A DOCUMENTAÇÃO DA SUA AERONAVE DIGITALIZADA</h5>
-            </div>
+<body class="img-body">
+    <header class="o-header">
+        <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px" align="left">
+        <div>
+            <h1>VOAR DIGITAL DOCS</h1>
+            <h5>A DOCUMENTAÇÃO DA SUA AERONAVE DIGITALIZADA</h5>
         </div>
-    </header> <!-- aqui termina HEADER -->
+    </header>
 
     <div class="page">
         <form method="POST" class="formLogin">
