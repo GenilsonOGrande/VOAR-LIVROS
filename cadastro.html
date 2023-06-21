@@ -10,6 +10,11 @@
             margin: 0;
             padding: 0;
             color: #023047;
+            background-image: url('Img/VoarHangaresBG.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
         }
 
         .page {
@@ -19,7 +24,6 @@
             justify-content: center;
             width: 100%;
             height: auto;
-            float: right;
             background-color: rgba(0, 0, 0, 0);
         }
 
@@ -35,17 +39,6 @@
             width: 80%;
             max-width: 500px;
             border-right: 50px solid #fff;
-        }
-
-        .img-body {
-            height: 200px;
-            background-image: url('Img/VoarHangaresBG.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border: 2px solid darkgray;
-            color: #000;
-            text-shadow: 1px 1px 0 #fff;
         }
 
         .formLogin h1 {
@@ -97,7 +90,7 @@
         }
 
         .o-header {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             width: 100%;
         }
@@ -110,14 +103,21 @@
             width: 15%;
         }
 
+        .o-header img {
+            display: block;
+            width: 149px;
+            height: 149px;
+        }
+
         .o-header h1,
         .o-header h5 {
+            margin: 0;
             text-align: center;
         }
 
         .o-footer {
             text-align: center;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             width: 100%;
             margin-top: 20px;
@@ -126,16 +126,17 @@
         @media (max-width: 768px) {
             .formLogin {
                 width: 90%;
+                max-width: none;
             }
         }
     </style>
 </head>
-<body class="img-body">
+<body>
     <header class="o-header">
         <table>
             <tr>
                 <td>
-                    <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px">
+                    <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" alt="Logo" width="149px" height="149px">
                 </td>
                 <td>
                     <h1>VOAR DIGITAL DOCS</h1>
