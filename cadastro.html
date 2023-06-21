@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
@@ -39,6 +40,7 @@
             width: 80%;
             max-width: 500px;
             border-right: 50px solid #fff;
+            position: relative;
         }
 
         .formLogin h1 {
@@ -103,15 +105,7 @@
             width: 15%;
         }
 
-        .o-header img {
-            display: block;
-            width: 149px;
-            height: 149px;
-        }
-
-        .o-header h1,
-        .o-header h5 {
-            margin: 0;
+        .o-header td:last-child {
             text-align: center;
         }
 
@@ -123,11 +117,12 @@
             margin-top: 20px;
         }
 
-        @media (max-width: 768px) {
-            .formLogin {
-                width: 90%;
-                max-width: none;
-            }
+        .return-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #004580;
         }
     </style>
 </head>
@@ -136,7 +131,7 @@
         <table>
             <tr>
                 <td>
-                    <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" alt="Logo" width="149px" height="149px">
+                    <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" alt="Logo">
                 </td>
                 <td>
                     <h1>VOAR DIGITAL DOCS</h1>
@@ -148,6 +143,7 @@
 
     <div class="page">
         <div class="formLogin">
+            <a href="https://genilsonogrande.github.io/VOAR-LIVROS/index.html" class="return-button"><i class="fas fa-arrow-left"></i></a>
             <h1>CADASTRO</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="nome">NOME COMPLETO</label>
@@ -165,5 +161,7 @@
     </div>
 
     <footer class="o-footer">© 2023 VOAR AVIATION - TODOS OS DIREITOS RESERVADOS.</footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 </body>
 </html>
