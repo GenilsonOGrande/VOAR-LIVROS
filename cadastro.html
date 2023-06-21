@@ -32,12 +32,20 @@
             box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
             gap: 5px;
             margin-top: 20px;
-            width: 50%;
+            width: 80%;
+            max-width: 500px;
             border-right: 50px solid #fff;
         }
 
-        .areaLogin img {
-            width: 420px;
+        .img-body {
+            height: 200px;
+            background-image: url('Img/VoarHangaresBG.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 2px solid darkgray;
+            color: #000;
+            text-shadow: 1px 1px 0 #fff;
         }
 
         .formLogin h1 {
@@ -67,36 +75,9 @@
             outline: none;
         }
 
-        .img-body {
-            height: 200px;
-            background-image: url('Img/VoarHangaresBG.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            border: 2px solid darkgray;
-            color: #000;
-            text-shadow: 1px 1px 0 #fff;
-        }
-
-        .formLogin input:focus {
-            border: 1px solid #004580;
-        }
-
         .formLogin label {
             font-size: 14px;
             font-weight: 600;
-        }
-
-        .formLogin a {
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 13px;
-            color: #555;
-            transition: all linear 160ms;
-        }
-
-        .formLogin a:hover {
-            color: #004580;
         }
 
         .btn {
@@ -114,39 +95,74 @@
             transform: scale(1.05);
             background-color: #0045806;
         }
+
+        .o-header {
+            background-color: #fff;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .o-header table {
+            width: 100%;
+        }
+
+        .o-header td:first-child {
+            width: 15%;
+        }
+
+        .o-header h1,
+        .o-header h5 {
+            text-align: center;
+        }
+
+        .o-footer {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .formLogin {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body class="img-body">
-<header class="o-header">
-    <table style="width:100%">
-        <tr style="height:150px">
-            <td style="width:15%">
-                <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px" align="left">
-            </td>
-            <td style="width:85%">
-                <h1 style="text-align: center">VOAR DIGITAL DOCS</h1>
-                <h5 style="text-align: center">A DOCUMENTAÇÃO DA SUA AERONAVE DIGITALIZADA</h5>
-            </td>
-        </tr>
-    </table>
-</header>
-<div class="page">
-    <div class="formLogin">
-        <h1>CADASTRO</h1>
-        <p>Digite os seus dados de acesso no campo abaixo.</p>
-        <label for="nome">NOME COMPLETO</label>
-        <input type="text" placeholder="Digite seu nome completo" autofocus="true">
-        <label for="CPF">CPF</label>
-        <input type="number" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" placeholder="Digite seu CPF" autofocus="true">
-        <label for="tel">TELEFONE</label>
-        <input type="tel" placeholder="Digite seu telefone" autofocus="true">
-        <label for="email">E-mail</label>
-        <input type="email" placeholder="Digite seu e-mail" autofocus="true">
-        <label for="password">Senha</label>
-        <input type="password" placeholder="Digite sua senha">
-        <input type="submit" value="Acessar" class="btn">
+    <header class="o-header">
+        <table>
+            <tr>
+                <td>
+                    <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px">
+                </td>
+                <td>
+                    <h1>VOAR DIGITAL DOCS</h1>
+                    <h5>A DOCUMENTAÇÃO DA SUA AERONAVE DIGITALIZADA</h5>
+                </td>
+            </tr>
+        </table>
+    </header>
+
+    <div class="page">
+        <div class="formLogin">
+            <h1>CADASTRO</h1>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <label for="nome">NOME COMPLETO</label>
+            <input type="text" placeholder="Digite seu nome completo" autofocus="true">
+            <label for="CPF">CPF</label>
+            <input type="number" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" placeholder="Digite seu CPF" autofocus="true">
+            <label for="tel">TELEFONE</label>
+            <input type="tel" placeholder="Digite seu telefone" autofocus="true">
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" autofocus="true">
+            <label for="password">Senha</label>
+            <input type="password" placeholder="Digite sua senha">
+            <input type="submit" value="Acessar" class="btn">
+        </div>
     </div>
-</div>
-<footer class="o-footer">© 2023 VOAR AVIATION - TODOS OS DIREITOS RESERVADOS.</footer>
+
+    <footer class="o-footer">© 2023 VOAR AVIATION - TODOS OS DIREITOS RESERVADOS.</footer>
 </body>
 </html>
