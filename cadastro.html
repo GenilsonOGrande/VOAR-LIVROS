@@ -147,16 +147,18 @@
             <h1>CADASTRO</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
             <label for="nome">NOME COMPLETO</label>
-            <input type="text" placeholder="Digite seu nome completo" autofocus="true">
+            <input id="nome_cad" name="nome_cad" autofocus="true" required="required" type="text" placeholder="nome" />
             <label for="CPF">CPF</label>
             <input type="number" pattern="(\d{3}\.?\d{3}\.?\d{3}-?\d{2})|(\d{2}\.?\d{3}\.?\d{3}/?\d{4}-?\d{2})" placeholder="Digite seu CPF" autofocus="true">
             <label for="tel">TELEFONE</label>
             <input type="tel" placeholder="Digite seu telefone" autofocus="true">
             <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" autofocus="true">
+            <input id="email_cad" name="email_cad" autofocus="true" required="required" type="email" placeholder="contato@htmlecsspro.com"/> 
             <label for="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha">
+            <input id="senha_cad" name="senha_cad" autofocus="true" required="required" type="password" placeholder="ex. AAA1234@"/>
             <input type="submit" value="Acessar" class="btn">
+            <label for="senha_confirma">Confirme sua senha</label>
+            <input id="senha_confirma" name="senha_confirma" required="required" type="password" placeholder="Digite a mesma senha criada anteriormente"/>
         </div>
     </div>
 
