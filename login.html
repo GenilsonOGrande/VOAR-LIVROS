@@ -161,15 +161,16 @@
     </header>
 
     <div class="page">
+        <script type="text/javascript" src="js/CadLog.js"></script>
         <div class="formLogin">
             <a href="https://genilsonogrande.github.io/VOAR-LIVROS/index.html" class="return-button"><i class="fas fa-arrow-left"></i></a>
             <h1>LOGIN</h1>
             <p>Digite os seus dados de acesso no campo abaixo.</p>
-            <label for="email">E-mail</label>
-            <input type="email" placeholder="Digite seu e-mail" autofocus="true">
-            <label for="password">Senha</label>
-            <input type="password" placeholder="Digite sua senha">
-            <input type="submit" value="Acessar" class="btn">
+            <label for="email_login">Seu email</label>
+            <input id="email_login" name="email_login" autofocus="true required="required" type="email" placeholder="ex. contato@htmlecsspro.com"/>
+            <label for="senha_login">Sua senha</label>
+            <input id="senha_login" name="senha_login" required="required" type="password" placeholder="ex. senha" />
+            <input type="button" value="Login" onclick="LogarUser()"/>
             <button class="create-account-button" onclick="window.location.href='https://genilsonogrande.github.io/VOAR-LIVROS/cadastro.html'">Crie uma conta</button>
         </div>
     </div>
