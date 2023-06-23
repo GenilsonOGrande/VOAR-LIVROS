@@ -9,6 +9,27 @@ if (listaUsersRec !== null) {
   console.log('Users não encontrados.');
 }
 
+function LogarUser(){
+  window.alert("Teste.");
+  checkUserExistenceLog();
+}
+//-----------------------------------------------------------------
+function checkUserExistenceLog(){
+const email_login = document.getElementById("email_login").value;  
+const senha_login = document.getElementById("senha_login").value;
+  
+const usuarioEncontrado = listaUsersRec.find(user => user.email === email_login && user.senha === senha_login);
+
+if (usuarioEncontrado) {
+  window.alert("As credenciais são válidas. Bem-vindo, " + usuarioEncontrado.nome + "!");
+  window.location.href = "https://voar.aero/";
+
+} else {
+  window.alert("As credenciais são inválidas. Por favor, verifique seu email e senha.");
+}
+  
+}
+//-----------------------------------------------------------------
 /*
 # Autor: Arthur J de Oliveira Santos
 # Data: 21 de junho de 2023
