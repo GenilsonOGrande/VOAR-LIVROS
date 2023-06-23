@@ -1,48 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Exibição de Arquivos</title>
-  <style>
-    #file-input {
-      display: none;
-    }
-    #file-label {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      cursor: pointer;
-    }
-    #file-display {
-      margin-top: 20px;
-      width: 100%;
-    }
-  </style>
+  <title>Exemplo de Upload e Exibição de Arquivos PDF</title>
 </head>
 <body>
-  <input type="file" id="file-input" accept=".jpg, .jpeg, .png, .pdf">
-  <label for="file-input" id="file-label">Selecionar arquivo</label>
-  <div id="file-display"></div>
+  <h1>Exemplo de Upload e Exibição de Arquivos PDF</h1>
 
-  <script>
-    document.getElementById('file-input').addEventListener('change', function(e) {
-      var file = e.target.files[0];
-      var reader = new FileReader();
+  <input type="file" id="pdfFileInput">
+  <button onclick="carregarPDF()">Carregar PDF</button>
 
-      reader.onload = function(e) {
-        var fileDisplay = document.getElementById('file-display');
+  <div id="pdfContainer"></div>
 
-        if (file.type === 'application/pdf') {
-          fileDisplay.innerHTML = '<embed src="' + e.target.result + '" width="500" height="600" type="application/pdf">';
-        } else if (file.type === 'image/jpeg' || file.type === 'image/png') {
-          fileDisplay.innerHTML = '<img src="' + e.target.result + '" style="max-width: 500px; max-height: 600px;">';
-        } else {
-          fileDisplay.innerHTML = 'Formato de arquivo não suportado.';
-        }
-      }
-
-      reader.readAsDataURL(file);
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
