@@ -8,7 +8,7 @@ if (listaUsersRec !== null) {
 } else {
   console.log('Users não encontrados.');
 }
-
+/*
 # Autor: Arthur J de Oliveira Santos
 # Data: 21 de junho de 2023
 # Descrição: Este código possui funcionalidades de recuperar um banco de dados interno.
