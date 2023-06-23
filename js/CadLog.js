@@ -85,6 +85,7 @@ function cadastroUser() {
 }
 //-----------------------------------------------------------------
 function LogarUser(){
+  window.alert("Teste.");
   checkUserExistenceLog();
 }
 //-----------------------------------------------------------------
