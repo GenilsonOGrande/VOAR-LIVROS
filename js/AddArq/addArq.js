@@ -20,11 +20,11 @@ window.onload = function() {
     function displayPdf() {
         fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
 
-        var reader = new FileReader();
+        var fileReader = new FileReader();
 
-        reader.onload = function(e) {
-            var buffer = new Uint8Array(reader.result);
-            PDFJS.getDocument(buffer).then(function(pdf) {
+        fileReader.onload = function() {
+            var typedarray = new Uint8Array(this.result);
+            PDFJS.getDocument(typedarray).promise.then(function(pdf) {
                 var pageNumber = 1;
                 pdf.getPage(pageNumber).then(function(page) {
                     var scale = 1.5;
@@ -44,7 +44,7 @@ window.onload = function() {
             });
         };
 
-        reader.readAsArrayBuffer(selectedFile);
+        fileReader.readAsArrayBuffer(selectedFile);
     }
 
     function displayFile() {
