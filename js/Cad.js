@@ -97,7 +97,7 @@ window.location.href = 'https://genilsonogrande.github.io/VOAR-LIVROS/login.html
 /*
 # Autor: Arthur J de Oliveira Santos
 # Data: 21 de junho de 2023
-# Descrição: Este código possui funcionalidades de cadastro e login de um usuário.
+# Descrição: Este código possui funcionalidades de cadastro de um usuário.
 # Linkedin: https://www.linkedin.com/in/arthur-jacintho-de-oliveira-santos-3737b8261
 # Github: https://github.com/ArthurJos04
 # Obs: 1. Inserir segurança mínima exigida para uma criação de senha...
