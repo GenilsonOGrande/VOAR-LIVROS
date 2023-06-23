@@ -3,7 +3,7 @@ var listaUsersRec = JSON.parse(localStorage.getItem('BancoUsers'));
 
 // Verifica se o array foi recuperado com sucesso
 if (listaUsersRec !== null) {
-  // Utilize o array como desejar
+  
   console.log(listaUsersRec);
 } else {
   console.log('Users não encontrados.');
