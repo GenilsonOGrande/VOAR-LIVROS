@@ -1,5 +1,5 @@
 // Recupera o array (banco dados interno/navegador) do localStorage
-var listaUsersRec = JSON.parse(localStorage.getItem('listaUsers'));
+var listaUsersRec = JSON.parse(localStorage.getItem('BancoUsers'));
 
 // Verifica se o array foi recuperado com sucesso
 if (listaUsersRec !== null) {
