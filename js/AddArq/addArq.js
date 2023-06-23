@@ -4,50 +4,48 @@ window.onload = function() {
     var selectedFile = null;
 
     fileInput.addEventListener('change', function(e) {
-        selectedFile = fileInput.files[0];
+        selectedFile = e.target.files[0];
     });
 
-    function displayImage() {
-        fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
-
-        var img = document.createElement('img');
-        img.src = URL.createObjectURL(selectedFile);
-        img.style.maxWidth = '100%';
-        img.style.maxHeight = '100%';
-        fileDisplay.appendChild(img);
+    function displayImage(file) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
+            fileDisplay.innerHTML = '';
+            fileDisplay.appendChild(img);
+        };
+        reader.readAsDataURL(file);
     }
 
-    function displayPdf() {
-        fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
-
+    function displayPdf(file) {
         var fileReader = new FileReader();
-
-        fileReader.onload = function() {
-            var typedarray = new Uint8Array(this.result);
-            PDFJS.getDocument(typedarray).promise.then(function(pdf) {
-                var pageNumber = 1;
-                pdf.getPage(pageNumber).then(function(page) {
-                    var scale = 1.5;
-                    var viewport = page.getViewport({ scale: scale });
-
+        fileReader.onload = function(e) {
+            var typedarray = new Uint8Array(e.target.result);
+            pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+                pdf.getPage(1).then(function(page) {
+                    var viewport = page.getViewport({ scale: 1.5 });
                     var canvas = document.createElement('canvas');
                     var context = canvas.getContext('2d');
                     canvas.height = viewport.height;
                     canvas.width = viewport.width;
-                    fileDisplay.appendChild(canvas);
-
-                    page.render({
+                    var renderContext = {
                         canvasContext: context,
                         viewport: viewport
+                    };
+                    page.render(renderContext).promise.then(function() {
+                        fileDisplay.innerHTML = '';
+                        fileDisplay.appendChild(canvas);
                     });
                 });
             });
         };
-
-        fileReader.readAsArrayBuffer(selectedFile);
+        fileReader.readAsArrayBuffer(file);
     }
 
-    function displayFile() {
+    window.displayFile = function() {
         if (!selectedFile) {
             fileDisplay.innerHTML = "Nenhum arquivo selecionado.";
             return;
@@ -56,9 +54,9 @@ window.onload = function() {
         var fileType = selectedFile.type;
 
         if (fileType.startsWith('image/')) {
-            displayImage();
+            displayImage(selectedFile);
         } else if (fileType === 'application/pdf') {
-            displayPdf();
+            displayPdf(selectedFile);
         } else {
             fileDisplay.innerHTML = "Formato de arquivo inválido. Por favor, selecione uma imagem ou um arquivo PDF.";
         }
