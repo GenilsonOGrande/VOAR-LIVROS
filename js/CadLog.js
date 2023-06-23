@@ -56,6 +56,7 @@ function confirmaSenha() {
   } 
   else {
   criaUser();
+  transferirListaUsers();
   }
 }
 }
@@ -87,6 +88,11 @@ function LogarUser(){
   checkUserExistenceLog();
 }
 //-----------------------------------------------------------------
+function transferirListaUsers(){ 
+localStorage.setItem('BancoUsers', JSON.stringify(listaUsers));
+// Redireciona para a página de destino
+window.location.href = 'https://genilsonogrande.github.io/VOAR-LIVROS/login.html';   
+}
 /*
 # Autor: Arthur J de Oliveira Santos
 # Data: 21 de junho de 2023
