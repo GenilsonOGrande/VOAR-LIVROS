@@ -45,7 +45,7 @@ window.onload = function() {
         fileReader.readAsArrayBuffer(file);
     }
 
-    window.displayFile = function() {
+    document.getElementById('display-btn').addEventListener('click', function() {
         if (!selectedFile) {
             fileDisplay.innerHTML = "Nenhum arquivo selecionado.";
             return;
@@ -60,5 +60,5 @@ window.onload = function() {
         } else {
             fileDisplay.innerHTML = "Formato de arquivo inválido. Por favor, selecione uma imagem ou um arquivo PDF.";
         }
-    }
+    });
 };
