@@ -1,31 +1,57 @@
-document.getElementById('file-input').addEventListener('change', function(e) {
-  var file = e.target.files[0];
+window.onload = function() {
+    var fileInput = document.getElementById('file-input');
+    var fileDisplay = document.getElementById('file-display');
 
-  if (file) {
-    var reader = new FileReader();
+    fileInput.addEventListener('change', function(e) {
+        var file = fileInput.files[0];
+        var fileType = file.type;
 
-    reader.onload = function(e) {
-      var fileContainer = document.getElementById('file-container');
-      fileContainer.innerHTML = ''; // Limpa o conteúdo anterior
+        if (fileType.startsWith('image/')) {
+            displayImage(file);
+        } else if (fileType === 'application/pdf') {
+            displayPdf(file);
+        } else {
+            fileDisplay.innerHTML = "Formato de arquivo inválido. Por favor, selecione uma imagem ou um arquivo PDF.";
+        }
+    });
 
-      var fileURL = e.target.result;
-      var fileType = file.type;
+    function displayImage(file) {
+        fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
 
-      if (fileType.startsWith('image/')) {
         var img = document.createElement('img');
-        img.src = fileURL;
-        fileContainer.appendChild(img);
-      } else if (fileType === 'application/pdf') {
-        var embed = document.createElement('embed');
-        embed.src = fileURL;
-        fileContainer.appendChild(embed);
-      } else {
-        var unsupportedMsg = document.createElement('p');
-        unsupportedMsg.textContent = 'Formato de arquivo não suportado.';
-        fileContainer.appendChild(unsupportedMsg);
-      }
-    };
+        img.src = URL.createObjectURL(file);
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '100%';
+        fileDisplay.appendChild(img);
+    }
 
-    reader.readAsDataURL(file);
-  }
-});
+    function displayPdf(file) {
+        fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var buffer = new Uint8Array(reader.result);
+            PDFJS.getDocument(buffer).then(function(pdf) {
+                var pageNumber = 1;
+                pdf.getPage(pageNumber).then(function(page) {
+                    var scale = 1.5;
+                    var viewport = page.getViewport({ scale: scale });
+
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    fileDisplay.appendChild(canvas);
+
+                    page.render({
+                        canvasContext: context,
+                        viewport: viewport
+                    });
+                });
+            });
+        };
+
+        reader.readAsArrayBuffer(file);
+    }
+};
