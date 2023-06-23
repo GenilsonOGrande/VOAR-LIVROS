@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exibição de Arquivos</title>
+  <style>
+    #file-input {
+      display: none;
+    }
+    #file-label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    #file-display {
+      margin-top: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="file-input" accept=".jpg, .jpeg, .png, .pdf">
+  <label for="file-input" id="file-label">Selecionar arquivo</label>
+  <div id="file-display"></div>
+
+  <script>
+    document.getElementById('file-input').addEventListener('change', function(e) {
+      var file = e.target.files[0];
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        var fileDisplay = document.getElementById('file-display');
+
+        if (file.type === 'application/pdf') {
+          fileDisplay.innerHTML = '<embed src="' + e.target.result + '" width="500" height="600" type="application/pdf">';
+        } else if (file.type === 'image/jpeg' || file.type === 'image/png') {
+          fileDisplay.innerHTML = '<img src="' + e.target.result + '" style="max-width: 500px; max-height: 600px;">';
+        } else {
+          fileDisplay.innerHTML = 'Formato de arquivo não suportado.';
+        }
+      }
+
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
