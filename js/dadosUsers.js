@@ -8,7 +8,7 @@ if (listaUsersRec !== null) {
 } else {
   console.log('Users não encontrados.');
 }
-
+//-----------------------------------------------------------------
 function LogarUser(){
   window.alert("Teste.");
   checkUserExistenceLog();
