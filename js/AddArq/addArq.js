@@ -1,31 +1,23 @@
 window.onload = function() {
     var fileInput = document.getElementById('file-input');
     var fileDisplay = document.getElementById('file-display');
+    var selectedFile = null;
 
     fileInput.addEventListener('change', function(e) {
-        var file = fileInput.files[0];
-        var fileType = file.type;
-
-        if (fileType.startsWith('image/')) {
-            displayImage(file);
-        } else if (fileType === 'application/pdf') {
-            displayPdf(file);
-        } else {
-            fileDisplay.innerHTML = "Formato de arquivo inválido. Por favor, selecione uma imagem ou um arquivo PDF.";
-        }
+        selectedFile = fileInput.files[0];
     });
 
-    function displayImage(file) {
+    function displayImage() {
         fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
 
         var img = document.createElement('img');
-        img.src = URL.createObjectURL(file);
+        img.src = URL.createObjectURL(selectedFile);
         img.style.maxWidth = '100%';
         img.style.maxHeight = '100%';
         fileDisplay.appendChild(img);
     }
 
-    function displayPdf(file) {
+    function displayPdf() {
         fileDisplay.innerHTML = "";  // Limpar qualquer exibição anterior
 
         var reader = new FileReader();
@@ -52,6 +44,23 @@ window.onload = function() {
             });
         };
 
-        reader.readAsArrayBuffer(file);
+        reader.readAsArrayBuffer(selectedFile);
+    }
+
+    function displayFile() {
+        if (!selectedFile) {
+            fileDisplay.innerHTML = "Nenhum arquivo selecionado.";
+            return;
+        }
+
+        var fileType = selectedFile.type;
+
+        if (fileType.startsWith('image/')) {
+            displayImage();
+        } else if (fileType === 'application/pdf') {
+            displayPdf();
+        } else {
+            fileDisplay.innerHTML = "Formato de arquivo inválido. Por favor, selecione uma imagem ou um arquivo PDF.";
+        }
     }
 };
