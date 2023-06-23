@@ -1,0 +1,11 @@
+// Recupera o array (banco dados interno/navegador) do localStorage
+var listaUsersRec = JSON.parse(localStorage.getItem('listaUsers'));
+
+// Verifica se o array foi recuperado com sucesso
+if (listaUsersRec !== null) {
+  // Utilize o array como desejar
+  console.log(listaUsersRec);
+} else {
+  console.log('Users não encontrados.');
+}
+
