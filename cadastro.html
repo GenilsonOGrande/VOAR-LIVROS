@@ -124,6 +124,18 @@
             font-size: 24px;
             color: #004580;
         }
+        .create-account-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: none;
+            color: #004580;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -161,7 +173,7 @@
             <label for="senha_confirma">Confirme sua senha</label>
             <input id="senha_confirma" name="senha_confirma" required="required" type="password" placeholder="Digite a mesma senha criada anteriormente"/>
             <input type="button" value="Cadastrar" onclick="cadastroUser()"/>
-            <button class="ir-login-button" onclick="window.location.href='https://genilsonogrande.github.io/VOAR-LIVROS/login.html'">Já tem uma conta?</button>
+            <button class="create-account-button" onclick="window.location.href='https://genilsonogrande.github.io/VOAR-LIVROS/login.html'">Já tem uma conta?</button>
 
         </div>
     </div>
