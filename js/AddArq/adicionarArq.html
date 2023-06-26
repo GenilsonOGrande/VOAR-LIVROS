@@ -9,28 +9,81 @@
     }
   </style>
   <script>
-      function exibirArquivo(input) {
+  function exibirArquivo(input) {
       var file = input.files[0];
       var reader = new FileReader();
 
       reader.onload = function(e) {
         if (file.type.indexOf('image') !== -1) {
           document.getElementById('visualizacao').innerHTML = '<img src="' + e.target.result + '" alt="Imagem" />';
-        } 
-        else if (file.type.indexOf('pdf') !== -1) {
+        } else if (file.type.indexOf('pdf') !== -1) {
           document.getElementById('visualizacao').innerHTML = '<iframe src="' + e.target.result + '" width="100%" height="100%"></iframe>';
-        } 
-        else {
+        } else {
           document.getElementById('visualizacao').innerHTML = 'Formato de arquivo não suportado.';
         }
       };
       reader.readAsDataURL(file);
     }
-  </script>
+
+var listaDocs = [];
+var listaDocs = [
+        {id: 0,
+        nome: "Manual aviao 1",
+        link: "https://www.caceres.mt.gov.br/fotos_institucional_downloads/2.pdf"
+        },  
+];
+
+var id_teste = 1;
+function criaDoc(){
+   var input = document.getElementById("escolherArq");
+   console.log(input.value);
+   var id_doc = gerarID();
+   var nome_doc = input.files[0].name;
+   var link_doc = URL.createObjectURL(input.files[0]);
+   addDoc(id_doc, nome_doc, link_doc);
+   
+}
+function gerarID() {
+  return id_teste++;
+}
+function addDoc(id, nome, link) {
+  listaDocs.push({id, nome, link });
+  console.log(Object.values(listaDocs));
+}
+
+function escolherDoc() {
+  var valores = "Digite o ID do documento que deseja exibir \n";
+  for (var i = 0; i < listaDocs.length; i++) {
+    var doc = listaDocs[i];
+    valores += "ID: " + doc.id + " - " + doc.nome + "\n";
+  }
+  var idEscolhido = window.prompt(valores);
+  var documentoEscolhido = listaDocs.find(function(doc) {
+    return doc.id === parseInt(idEscolhido);
+  });
+
+  if (documentoEscolhido) {
+    var mensagem = "ID escolhido: " + documentoEscolhido.id + "\n" +
+      "Nome do documento: " + documentoEscolhido.nome + "\n" +
+      "Link do documento: " + documentoEscolhido.link;
+    alert(mensagem);
+
+    if (documentoEscolhido.link.indexOf('.pdf') !== -1) {
+      document.getElementById('visualizacao').innerHTML = '<iframe src="' + documentoEscolhido.link + '" width="100%" height="100%"></iframe>';
+    } else {
+      document.getElementById('visualizacao').innerHTML = '<img src="' + documentoEscolhido.link + '" alt="Imagem" />';
+    }
+  } else {
+    alert("ID do documento não encontrado.");
+  }
+}
+</script>
 </head>
 <body>
   <h1>Upload de Imagem ou PDF</h1>
-  <input type="file" accept="image/*,.pdf" onchange="exibirArquivo(this)" />
+  <input type="file" accept="image/*,.pdf" onchange="exibirArquivo(this)" id="escolherArq" />
+  <button type="button" id="btnAddArquivoLista" onclick="criaDoc()">Adicionar</button>
+  <button type="button" id="Exibir" onclick="escolherDoc()">Exibir</button>
   <div id="visualizacao"></div>
 </body>
 </html>
