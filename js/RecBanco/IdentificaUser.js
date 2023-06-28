@@ -15,6 +15,6 @@ function verificarTipoUsuario(idUsuario) {
   } 
 }
 //----------------------------------------------------------
-function transferirListaUsers(){ 
+function transferirIdUsers(){ 
 localStorage.setItem('IdUser', JSON.stringify(idUsuario));   
 }
