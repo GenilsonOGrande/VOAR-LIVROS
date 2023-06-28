@@ -1,9 +1,9 @@
 var IdUserRec = JSON.parse(localStorage.getItem('IdUser'));
 
 // Verifica se o array foi recuperado com sucesso
-if (varIdUserRec !== null) {
+if (IdUserRec !== null) {
   
-  console.log(varIdUserRec);
+  console.log(IdUserRec);
 } else {
-  console.log('Users não encontrados.');
+  console.log("Teste. Id: " + IdUserRec);
 }
