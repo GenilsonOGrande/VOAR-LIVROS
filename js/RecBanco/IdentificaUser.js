@@ -10,7 +10,7 @@ function verificarTipoUsuario(idUsuario) {
 var idUsuarioLogado = 1; // ID do usuário logado (exemplo: 1 para Administrador)
 var tipoUsuarioLogado = verificarTipoUsuario(idUsuarioLogado);
 
-if (tipoUsuarioLogado === "admin") {
+if (tipoUsuarioLogado === "adm") {
   // Funcionalidades exclusivas do Administrador
   console.log("Bem-vindo, Administrador!");
   // ...
