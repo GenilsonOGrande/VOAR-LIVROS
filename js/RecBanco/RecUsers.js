@@ -9,12 +9,12 @@ if (listaUsersRec !== null) {
   console.log('Users não encontrados.');
 }
 //---------------------------------------------------------
-var IdUser = JSON.parse(localStorage.getItem('IdUser'));
+var IdUserRec = JSON.parse(localStorage.getItem('IdUser'));
 
 // Verifica se o array foi recuperado com sucesso
-if (IdUser !== null) {
+if (IdUserRec !== null) {
   
-  console.log(IdUser);
+  console.log(IdUserRec);
 } else {
   console.log('Teste');
 }
