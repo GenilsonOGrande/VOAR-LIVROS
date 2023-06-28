@@ -12,7 +12,7 @@ const usuarioEncontrado = listaUsersRec.find(user => user.email === email_login 
 if (usuarioEncontrado) {
   window.alert("As credenciais são válidas. Bem-vindo, " + usuarioEncontrado.nome + "!");
   //window.location.href = "https://voar.aero/";
-  verificarTipoUsuario(idUsuario);
+  verificarTipoUsuario();
 
 } else {
   window.alert("As credenciais são inválidas. Por favor, verifique seu email e senha.");
