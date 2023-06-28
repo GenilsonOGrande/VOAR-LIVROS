@@ -1,3 +1,4 @@
+/*
 // Recupera o array (banco dados interno/navegador) do localStorage
 var listaUsersRec = JSON.parse(localStorage.getItem('BancoUsers'));
 
