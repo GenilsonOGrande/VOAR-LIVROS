@@ -1,4 +1,8 @@
 //-----------------------------------------------------------------
+function LogarUser(){
+  checkUserExistenceLog();
+}
+//-----------------------------------------------------------------
 function checkUserExistenceLog(){
 const email_login = document.getElementById("email_login").value;  
 const senha_login = document.getElementById("senha_login").value;
