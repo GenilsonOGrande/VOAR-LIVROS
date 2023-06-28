@@ -9,15 +9,6 @@ if (listaUsersRec !== null) {
   console.log('Users não encontrados.');
 }
 //---------------------------------------------------------
-var IdUserRec = JSON.parse(localStorage.getItem('IdUser'));
-
-// Verifica se o array foi recuperado com sucesso
-if (IdUserRec !== null) {
-  
-  console.log(IdUserRec);
-} else {
-  console.log('Teste');
-}
 /*
 # Autor: Arthur J de Oliveira Santos
 # Data: 21 de junho de 2023
