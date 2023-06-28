@@ -3,22 +3,19 @@ function LogarUser(){
   checkUserExistenceLog();
 }
 //-----------------------------------------------------------------
-function checkUserExistenceLog(){
-const email_login = document.getElementById("email_login").value;  
-const senha_login = document.getElementById("senha_login").value;
-  
-const usuarioEncontrado = listaUsersRec.find(user => user.email === email_login && user.senha === senha_login);
+function checkUserExistenceLog() {
+  const email_login = document.getElementById("email_login").value;
+  const senha_login = document.getElementById("senha_login").value;
 
-if (usuarioEncontrado) {
-  window.alert("As credenciais são válidas. Bem-vindo, " + usuarioEncontrado.nome + "!");
-  //window.location.href = "https://voar.aero/";
+  const usuarioEncontrado = listaUsers.find(user => user.email === email_login && user.senha === senha_login);
 
-} else {
-  window.alert("As credenciais são inválidas. Por favor, verifique seu email e senha.");
+  if (usuarioEncontrado) {
+    window.alert("As credenciais são válidas. Bem-vindo, " + usuarioEncontrado.nome + "!");
+    verificarTipoUsuario(usuarioEncontrado.id);
+  } else {
+    window.alert("As credenciais são inválidas. Por favor, verifique seu email e senha.");
+  }
 }
-  
-}
-
 //-----------------------------------------------------------------
 /*
 # Autor: Arthur J de Oliveira Santos
