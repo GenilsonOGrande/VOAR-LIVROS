@@ -1,17 +1,3 @@
-// Recupera o array (banco dados interno/navegador) do localStorage
-var listaUsersRec = JSON.parse(localStorage.getItem('BancoUsers'));
-
-// Verifica se o array foi recuperado com sucesso
-if (listaUsersRec !== null) {
-  
-  console.log(listaUsersRec);
-} else {
-  console.log('Users não encontrados.');
-}
-//-----------------------------------------------------------------
-function LogarUser(){
-  checkUserExistenceLog();
-}
 //-----------------------------------------------------------------
 function checkUserExistenceLog(){
 const email_login = document.getElementById("email_login").value;  
