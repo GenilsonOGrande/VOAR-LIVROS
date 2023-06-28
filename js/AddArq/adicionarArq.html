@@ -12,7 +12,6 @@
 function exibirArquivo(input) {
       var file = input.files[0];
       var reader = new FileReader();
-
       reader.onload = function(e) {
         if (file.type.indexOf('image') !== -1) {
           document.getElementById('visualizacao').innerHTML = '<img src="' + e.target.result + '" alt="Imagem" />';
@@ -24,7 +23,7 @@ function exibirArquivo(input) {
       };
       reader.readAsDataURL(file);
     }
-
+//-----------------------------------------------------------------
 var listaDocs = [];
 var listaDocs = [
         {id: 0,
@@ -32,7 +31,7 @@ var listaDocs = [
         link: "https://www.caceres.mt.gov.br/fotos_institucional_downloads/2.pdf"
         },  
 ];
-
+//-----------------------------------------------------------------
 var id_teste = 1;
 function criaDoc(){
    var input = document.getElementById("escolherArq");
@@ -43,14 +42,16 @@ function criaDoc(){
    addDoc(id_doc, nome_doc, link_doc);
    
 }
+//-----------------------------------------------------------------
 function gerarID() {
   return id_teste++;
 }
+//-----------------------------------------------------------------    
 function addDoc(id, nome, link) {
   listaDocs.push({id, nome, link });
   console.log(Object.values(listaDocs));
 }
-
+//-----------------------------------------------------------------
 function escolherDoc() {
   var valores = "Digite o ID do documento que deseja exibir \n";
   for (var i = 0; i < listaDocs.length; i++) {
@@ -74,7 +75,14 @@ function escolherDoc() {
     alert("ID do documento não encontrado.");
   }
 }
-
+//-----------------------------------------------------------------
+/*# Autor: Arthur J de Oliveira Santos
+# Data: 21 de junho de 2023
+# Descrição: Este código possui funcionalidades de inserir e adicionar arquivos localmente
+# Linkedin: https://www.linkedin.com/in/arthur-jacintho-de-oliveira-santos-3737b8261
+# Github: https://github.com/ArthurJos04
+# Obs:
+*/
 </script>
 </head>
 <body>
@@ -85,10 +93,3 @@ function escolherDoc() {
   <div id="visualizacao"></div>
 </body>
 </html>
-# Autor: Arthur J de Oliveira Santos
-# Data: 21 de junho de 2023
-# Descrição: Este código possui funcionalidades de inserir e adicionar arquivos localmente
-# Linkedin: https://www.linkedin.com/in/arthur-jacintho-de-oliveira-santos-3737b8261
-# Github: https://github.com/ArthurJos04
-# Obs:
-*/
