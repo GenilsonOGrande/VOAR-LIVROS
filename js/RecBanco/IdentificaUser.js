@@ -1,16 +1,14 @@
-/*function verificarTipoUsuario(emailUsuarioLogado) {
-  var tipoUsuarioLogado = verificarTipoUsuario(emailUsuarioLogado);
+function verificarTipoUsuario(idUsuario) {
+  var usuario = listaUsers.find(function(user) {
+    return user.id === idUsuario;
+  });
 
-  if (tipoUsuarioLogado === "adm") {
-    // Funcionalidades exclusivas do Administrador
-    console.log("Bem-vindo, Administrador!");
-    // ...
-  } else if (tipoUsuarioLogado === "user") {
-    // Funcionalidades exclusivas do Usuário Comum
-    console.log("Bem-vindo, Usuário Comum!");
-    // ...
-  } else {
-    // Usuário não encontrado ou tipo inválido
-    console.log("Usuário não encontrado ou tipo inválido.");
-  }
-}*/
+  if (usuario) {
+    if (usuario.email === "adm@gmail.com") {
+      console.log("Usuário logado é um Administrador.");
+      // Adicionar funcionalidades exclusivas do Administrador
+    }  else {
+      console.log("Usuário logado é um Usuário Comum.");
+    }
+  } 
+}
