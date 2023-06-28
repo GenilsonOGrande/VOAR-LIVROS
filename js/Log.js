@@ -1,3 +1,4 @@
+
 // Verifica o tipo de usuário com base no email
 function verificarTipoUsuario(email) {
   var usuario = listaUsersRec.find(function(user) {
@@ -38,6 +39,10 @@ function verificarTipoUsuario(emailUsuarioLogado) {
     // Usuário não encontrado ou tipo inválido
     console.log("Usuário não encontrado ou tipo inválido.");
   }
+}
+
+function LogarUser(){
+  checkUserExistenceLog();
 }
 
 //-----------------------------------------------------------------
