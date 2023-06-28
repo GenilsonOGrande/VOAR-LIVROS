@@ -8,6 +8,16 @@ if (listaUsersRec !== null) {
 } else {
   console.log('Users não encontrados.');
 }
+//---------------------------------------------------------
+var IdUser = JSON.parse(localStorage.getItem('IdUser'));
+
+// Verifica se o array foi recuperado com sucesso
+if (IdUser !== null) {
+  
+  console.log(IdUser);
+} else {
+  console.log('Users não encontrados.');
+}
 /*
 # Autor: Arthur J de Oliveira Santos
 # Data: 21 de junho de 2023
