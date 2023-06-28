@@ -1,5 +1,5 @@
 function verificarTipoUsuario(idUsuario) {
-  var usuario = listaUsers.find(function(user) {
+  var usuario = listaUsersRec.find(function(user) {
     return user.id === idUsuario;
   });
 
