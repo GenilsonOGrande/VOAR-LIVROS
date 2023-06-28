@@ -16,7 +16,7 @@ if (IdUser !== null) {
   
   console.log(IdUser);
 } else {
-  console.log('Users não encontrados.');
+  console.log('Teste');
 }
 /*
 # Autor: Arthur J de Oliveira Santos
