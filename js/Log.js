@@ -1,4 +1,13 @@
+// Recupera o array (banco dados interno/navegador) do localStorage
+var listaUsersRec = JSON.parse(localStorage.getItem('BancoUsers'));
 
+// Verifica se o array foi recuperado com sucesso
+if (listaUsersRec !== null) {
+  
+  console.log(listaUsersRec);
+} else {
+  console.log('Users não encontrados.');
+}
 // Verifica o tipo de usuário com base no email
 function verificarTipoUsuario(email) {
   var usuario = listaUsersRec.find(function(user) {
