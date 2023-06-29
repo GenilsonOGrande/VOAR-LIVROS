@@ -12,6 +12,8 @@ function checkUserExistenceLog() {
   if (usuarioEncontrado) {
     window.alert("As credenciais são válidas. Bem-vindo, " + usuarioEncontrado.nome + "!");
     verificarTipoUsuario(usuarioEncontrado.id);
+    window.location.href ="https://genilsonogrande.github.io/VOAR-LIVROS/index.html";
+    
   } else {
     window.alert("As credenciais são inválidas. Por favor, verifique seu email e senha.");
   }
