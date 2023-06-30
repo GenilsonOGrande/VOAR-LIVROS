@@ -1,304 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Title</title>
-        <link rel="stylesheet" href="CSS/style.css"> <!-- css da pagina-->
-        <link rel="stylesheet" type="text/css" href="navbar_header.css"> <!-- css da NAVBAR-->
-        <!--  <link rel="stylesheet"  href="style_box_main.css">  caixa pagina principal-->
-        <script type="text/javascript" src="js/RecBanco/RecId.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" href="CSS/style.css"> <!-- css da pagina-->
+    <link rel="stylesheet" type="text/css" href="navbar_header.css"> <!-- css da NAVBAR-->
+    <!--  <link rel="stylesheet"  href="style_box_main.css">  caixa pagina principal-->
 
+    <style>
+        .navbar {
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0);
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-</head>
-<body style="background-image: url('Img/VoarHangaresBG.jpg')">
-        <header class="o-header"> <!-- aqui inicia o HEADER -->
-                <table style="width:100%">
-                    <tr style="height:150px">
-                        <td style="width:15%">
-                            <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px" align="center">
-                        </td>
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 5px 5px;
+            text-decoration: none;
+        }
 
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
 
+        .dropdown {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 19px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
 
+        .login {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            float: right;
+        }
 
+        .home {
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+            float: left;
+        }
 
-                        <td style="width:85%">
-                            <h1>VOAR DIGITAL DOCS</h1>
-                            <h5>A DOCUMENTAÇÃO DA SUA AERONAVE DIGITALIZADA</h5>
-                        </td>
-                    </tr>
-                </table>
-        <!-- Inicio da NAVBAR -->
-            <style>
-.navbar {
-  overflow: hidden;
-  background-color: rgba(0,0,0,0);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 5px 5px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 19px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
- .login{
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-  float:right;
-              }
-   .home{
-  cursor: pointer;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-  float:left;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus, .login:hover, .home:hover{
-  color: #00A5B5;
-  border-radius:5px;
-    text-decoration: none;
-  background-color:rgba(211,211,211,0.1);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-  background-color:rgba(211,211,211,0.1);
-  border-radius:5px;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-.show {
-  display: block;
-}
+        .navbar a:hover,
+        .dropdown:hover .dropbtn,
    
-   .login {
-                
-             }
+        .login:hover,
+        .home:hover {
+            color: #00A5B5;
+            border-radius: 5px;
+            text-decoration: none;
+            background-color: rgba(211, 211, 211, 0.1);
+        }
+iframe {
+            width: 70%;
+            height: calc(100vh - 40px);
+  float:right;
+            border: none;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
 
+        .dropdown-content a {
+            float: none;
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            background-color: rgba(211, 211, 211, 0.1);
+            border-radius: 5px;
+        }
 
-             </style>
-            <div class="navbar">
-                 <section>
-                          
-                          
-                     <button class="home">
-                   <a href="https://genilsonogrande.github.io/VOAR-LIVROS/index.html">Home</a>
-                   
-                 </button>
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
 
-              </section>
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="funcCadernetas()">Cadernetas
-                        <i class="fa fa-caret-down"></i>
-                    </button>
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-                    <div class="dropdown-content" id="botaoCadernetas">
-                        <a href="BT_Carderneta_Cad_Cel_n6.html" target="tela">Célula Nº 6</a>
-                        <a href="BT_PortObrig_Cert_Matricula.html" target="tela">Célula Nº 5</a>
-                        <a href="BT_PortObrig_WB_executivo.html" target="tela">Célula Nº 4</a>
-                    </div>
-                </div>
-
-
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="funcDiarioBordo()">Diário de Bordo
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content" id="botaoDiarioBordo">
-                       <a href="BT_DiarioBordo_DB_N36.html" target="tela">Diário Nº 1</a>
-                        <a href="BT_DiarioBordo_DB_N36.html" target="tela">Diário Nº 2</a>
-                        <a href="BT_DiarioBordo_DB_N36.html" target="tela">Diário Nº 3</a>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="myFunction()">Ordem de Serviço
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content" id="myDropdown">
-                        <a href="Files/16.PRADL_OS_2023_CGH0244.pdf" target="tela">OS 2023 Nº CGH0244</a>
-                        <a href="Files/16.PRADL_OS_2023_CGH0244.pdf" target="tela">OS 2023 Nº CGH0244</a>
-                        <a href="Files/16.PRADL_OS_2023_CGH0244.pdf" target="tela">OS 2023 Nº CGH0244</a>
-                    </div>
-                </div>
-
-                  <div class="dropdown">
-                    <button class="dropbtn" onclick="funcDocsPorteObrigatorio()">Docs Porte Obrigatório
-                        <i class="fa fa-caret-down"></i>
-
-                    </button>
-                    <div class="dropdown-content" id="botaoDocsPorteObrigatorio">
-                        <a href="Files/01_PRADL_CA_05.03.2022.pdf" target="tela">Certificado de
-                            Aeronavegabilidade</a>
-                        <a href="Files/02_PRADL_CM_05.03.2022.pdf" target="tela">Certificado de Matricula</a>
-                        <a href="Files/03_PRADL_W&B_10.05.2024_EXECUTIVO.pdf" target="tela">Peso e balancemento - Executivo</a>
-                        <a href="Files/05_PRADL_CVA.pdf" target="tela">CVA 2022</a>
-                        <a href="Files/14_PRADL_LICENÇA_23.08.2034.pdf" target="tela">Licença de Estação</a>
-                    </div>
-
-                </div>
-          <section>  <button class="login"><a class="login" href="https://genilsonogrande.github.io/VOAR-LIVROS/login.html">LOGIN</a></button></section>
-<!--
-
-            <script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-
-
-function funcCadernetas() {
-  document.getElementById("botaoCadernetas").classList.toggle("show");
+        .show {
+            display: block;
+        }
+      #visualizacao{
+        background-color:red;
+        width:10%;
+        height:10%;
+        float:right;
+        margin-bottom:50px;
+      }
+      .atras{
+        display:block;
+        width:100%;
+        height:50%;
+        background-color:red;
+      }
+        .login {}
+.container {
+    display: flex;
+  border-radius:10px;
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var botaoCadernetas = document.getElementById("botaoCadernetas");
-    if (botaoCadernetas.classList.contains('show')) {
-      botaoCadernetas.classList.remove('show');
-    }
-  }
+.menu {
+    width: 200px;
+    background-color: #f1f1f1;
+  text-align:center;
+  border-radius:10px;
 }
 
-
-            </script>
-
-
-             <script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-
-
-function funcDiarioBordo() {
-  document.getElementById("botaoDiarioBordo").classList.toggle("show");
+.sidebar {
+    flex-grow: 1;
+    background-color: gray;
+    height: auto;
+  border-radius:10px;
 }
+     
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var botaoDiarioBordo = document.getElementById("botaoDiarioBordo");
-    if (botaoDiarioBordo.classList.contains('show')) {
-      botaoDiarioBordo.classList.remove('show');
-    }
-  }
-}
+        .menu a, button {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #000;
+          text-align:center;
+          border-radius:10px;
+        }
 
-            </script>
+        .menu a:hover {
+            background-color: #ddd;
+          text-align:center;
+          border-radius:10px;
+        }
 
+        .submenu {
+            display: none;
+            margin-left: 20px;
+          text-align:center;
+          border-radius:10px;
+        }
 
-            <script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+        .submenu a {
+            display: block;
+            padding: 10px 0;
+            text-decoration: none;
+            color: #555;
+          text-align:center;
+          border-radius:10px;
+        }
 
+        .submenu a:hover {
+            color: #000;
+          text-align:center;
+          border-radius:10px;
+        }
+      
+    </style>
+    <script>
+       var subMenus = document.querySelectorAll(".submenu");
 
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+        // Função para exibir ou ocultar o sub-menu
+        function toggleSubMenu() {
+            var subMenu = this.nextElementSibling;
+            if (subMenu.style.display === "block") {
+                subMenu.style.display = "none";
+            } else {
+                subMenus.forEach(function (menu) {
+                    menu.style.display = "none";
+                });
+                subMenu.style.display = "block";
+            }
+        }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var myDropdown = document.getElementById("myDropdown");
-    if (myDropdown.classList.contains('show')) {
-      myDropdown.classList.remove('show');
-    }
-  }
-}
+        // Adiciona o evento de clique aos links principais
+        var links = document.querySelectorAll(".menu > a");
+        links.forEach(function (link) {
+            link.addEventListener("click", toggleSubMenu);
+        });
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function funcCadernetas() {
+            document.getElementById("botaoCadernetas").classList.toggle("show");
+        }
 
-            </script>
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var botaoCadernetas = document.getElementById("botaoCadernetas");
+                if (botaoCadernetas.classList.contains('show')) {
+                    botaoCadernetas.classList.remove('show');
+                }
+            }
+        }
 
-            <script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function funcDiarioBordo() {
+            document.getElementById("botaoDiarioBordo").classList.toggle("show");
+        }
 
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var botaoDiarioBordo = document.getElementById("botaoDiarioBordo");
+                if (botaoDiarioBordo.classList.contains('show')) {
+                    botaoDiarioBordo.classList.remove('show');
+                }
+            }
+        }
 
-function funcDocsPorteObrigatorio() {
-  document.getElementById("botaoDocsPorteObrigatorio").classList.toggle("show");
-}
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e) {
-  if (!e.target.matches('.dropbtn')) {
-  var botaoDocsPorteObrigatorio = document.getElementById("botaoDocsPorteObrigatorio");
-    if (botaoDocsPorteObrigatorio.classList.contains('show')) {
-      botaoDocsPorteObrigatorio.classList.remove('show');
-    }
-  }
-}
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var myDropdown = document.getElementById("myDropdown");
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
 
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function funcDocsPorteObrigatorio() {
+            document.getElementById("botaoDocsPorteObrigatorio").classList.toggle("show");
+        }
 
-            </script> <!-- aqui termina o botão DOCS PORTE OBRIGATÓRIO -->
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function (e) {
+            if (!e.target.matches('.dropbtn')) {
+                var botaoDocsPorteObrigatorio = document.getElementById("botaoDocsPorteObrigatorio");
+                if (botaoDocsPorteObrigatorio.classList.contains('show')) {
+                    botaoDocsPorteObrigatorio.classList.remove('show');
+                }
+            }
+        }
+     
+    </script>
+</head>
 
-
+<body style="background-image: url('Img/VoarHangaresBG.jpg')">
+    <header class="o-header"> <!-- aqui inicia o HEADER -->
+        <table style="width:100%">
+            <tr style="height:150px">
+                <td style="width:15%">
+                    <img src="Img/Voar_Solo_Vertical_Transparente_Positiva.png" width="149px" height="149px"
+                        align="center">
+                </td>
+                <td style="width:85%">
+                    <h1>VOAR DIGITAL DOCS</h1>
+                    <h5>A DOCUMENTAÇÃO DA SUA AERONAVE DIGITALIZADA</h5>
+                </td>
+            </tr>
+        </table>
+        <!-- Inicio da NAVBAR -->
+        <div class="navbar">
+            <section>
+                <button class="home">
+                    <a href="https://genilsonogrande.github.io/VOAR-LIVROS/index.html">Home</a>
+                </button>
+            </section>
+            
+            
+           
+           
+               
+            <section>
+                <button class="login">
+                    <a class="login" href="https://genilsonogrande.github.io/VOAR-LIVROS/login.html">LOGGOUT</a>
+                </button>
+            </section>
+        </div>
         <!-- fim da NAVBAR -->
+    </header> <!-- aqui termina HEADER -->
+  <div class="container">
+  <div class="menu">
+    <H3>DOCUMENTOS</H3>
+        <a href="#">CADERNETAS</a>
+        <div class="submenu">
+            <a href="#">CELULA Nº 6</a>
+            <a href="#">CELULA Nº 7</a>
+            <a href="#">CELULA Nº 8</a>
+            <a href="#">CELULA Nº 9</a>
+            <a href="#">CELULA Nº 10</a>
+        </div>
+        <a href="#">DIÁRIO DE BORDO</a>
+        <div class="submenu">
+            <a href="#">DIÁRIO Nº 1</a>
+            <a href="#">DIÁRIO Nº 2</a>
+            <a href="#">DIÁRIO Nº 3</a>
+            <a href="#">DIÁRIO Nº 4</a>
+            <a href="#">DIÁRIO Nº 5</a>
+        </div>
+        <a href="#">ORDEM DE SERVIÇO</a>
+        <div class="submenu">
+            <a href="#">OS 2023 Nº CGH0244</a>
+            <a href="#">OS 2023 Nº CGH0244</a>
+            <a href="#">OS 2023 Nº CGH0244</a>
+            <a href="#">OS 2023 Nº CGH0244</a>
+            <a href="#">OS 2023 Nº CGH0244</a>
+        </div>
+        <a href="#">DOCS PORTE OBRIGATÓRIO</a>
+        <div class="submenu">
+            <a href="#">Certificado de
+                        Aeronavegabilidade</a>
+            <a href="#">Subopção 4.2</a>
+            <a href="#">Subopção 4.3</a>
+            <a href="#">Subopção 4.4</a>
+            <a href="#">Subopção 4.5</a>
+        </div>
+    </div>
+  
+ <div class="sidebar">
+            <!-- Conteúdo da sidebar -->
+        </div>
+    </div>
+    <footer class="o-footer">
+        <table style="width:100%">
+            <tr>
+                <td style="width:40%"></td>
+                <td style="width:20%">
+                    <h5>VOAR</h5>
+                    <h6>+55 (11) 1234-5678</h6>
+                </td>
+                <td style="width:20%">
+                    <h5>ENDEREÇO</h5>
+                    <h6>Rua do Aviador, 123</h6>
+                    <h6>Aeroporto Internacional</h6>
+                    <h6>São Paulo - SP</h6>
+                </td>
+                <td style="width:20%">
+                    <h5>SIGA-NOS</h5>
+                    <h6>Instagram</h6>
+                    <h6>Facebook</h6>
+                </td>
+            </tr>
+        </table>
+    </footer>
+  <script>
+        var subMenus = document.querySelectorAll(".submenu");
 
-        </header> <!-- aqui termina HEADER -->
+        // Função para exibir ou ocultar o sub-menu
+        function toggleSubMenu() {
+            var subMenu = this.nextElementSibling;
+            if (subMenu.style.display === "block") {
+                subMenu.style.display = "none";
+            } else {
+                subMenus.forEach(function (menu) {
+                    menu.style.display = "none";
+                });
+                subMenu.style.display = "block";
+            }
+        }
 
-        <main class="o-main">
-
-            <iframe scrolling="NO" id="tela" name="tela" frameborder="5" height="600" width="100%">
-
-            </iframe>
-
-        </main>
-
-        <footer class="o-footer">© 2023 VOAR AVIATION - TODOS OS DIREITOS RESERVADOS.</footer>
-
-
+        // Adiciona o evento de clique aos links principais
+        var links = document.querySelectorAll(".menu > a");
+        links.forEach(function (link) {
+            link.addEventListener("click", toggleSubMenu);
+        });
+    </script>
 </body>
+
 </html>
